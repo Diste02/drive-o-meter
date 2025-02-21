@@ -1,15 +1,16 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import "dotenv/config";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDa2DiznfIrHQdTVCMINCVC4OmzdhVyifo",
-  authDomain: "drive-o-meter.firebaseapp.com",
-  projectId: "drive-o-meter",
-  storageBucket: "drive-o-meter.firebasestorage.app",
-  messagingSenderId: "601141764718",
-  appId: "1:601141764718:web:65d7a370fb88c5e3987c7f",
-  measurementId: "G-RTW9ELW69W"
+  apiKey: process.env.apiKey,
+  authDomain: process.env.authDomain,
+  projectId: process.env.projectId,
+  storageBucket: process.env.storageBucket,
+  messagingSenderId: process.env.messagingSenderId,
+  appId: process.env.appId,
+  measurementId: process.env.measurementId,
 };
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
